@@ -4,9 +4,12 @@ import axios from 'axios';
 // In production, set VITE_API_BASE_URL environment variable
 // Production backend: https://drims-rnv0.onrender.com
 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
+let rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 
   (import.meta.env.DEV || isLocalhost ? 'http://localhost:8080/api' : ''); 
 
+// Ensure the URL ends with /api for backend compatibility
+export const API_BASE_URL = rawBaseUrl.endsWith('/api') ? rawBaseUrl : 
+  (rawBaseUrl.endsWith('/') ? `${rawBaseUrl}api` : `${rawBaseUrl}/api`);
 // Debug: Log the API URL being used
 console.log('API Base URL:', API_BASE_URL);
 console.log('Environment Variable VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL || 'Not Set (Using Fallback)');
