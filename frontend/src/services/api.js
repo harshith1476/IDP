@@ -5,7 +5,7 @@ import axios from 'axios';
 // Production backend: https://drims-rnv0.onrender.com
 const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
 export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
-  (import.meta.env.DEV || isLocalhost ? 'http://localhost:8080/api' : 'https://drims-rnv0.onrender.com/api');
+  (import.meta.env.DEV || isLocalhost ? 'http://localhost:8080/api' : ''); 
 
 // Debug: Log the API URL being used
 console.log('API Base URL:', API_BASE_URL);
@@ -50,7 +50,7 @@ api.interceptors.response.use(
     // Handle network errors (server not reachable)
     if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
       console.error('Network error - Cannot reach the server');
-      const backendUrl = (import.meta.env.DEV || isLocalhost) ? 'http://localhost:8080' : 'https://drims-rnv0.onrender.com';
+      const backendUrl = (import.meta.env.DEV || isLocalhost) ? 'http://localhost:8080' : API_BASE_URL.replace('/api', '');
       error.message = `Cannot connect to the server. Please ensure the backend is running on ${backendUrl}`;
     }
     
