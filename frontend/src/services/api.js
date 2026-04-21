@@ -50,8 +50,7 @@ api.interceptors.response.use(
     // Handle network errors (server not reachable)
     if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
       console.error('Network error - Cannot reach the server');
-      const backendUrl = (import.meta.env.DEV || isLocalhost) ? 'http://localhost:8080' : API_BASE_URL.replace('/api', '');
-      error.message = `Cannot connect to the server. Please ensure the backend is running on ${backendUrl}`;
+      error.message = `Cannot connect to server. Please ensure the backend is running on ${API_BASE_URL}`;
     }
     
     // Handle 401 errors (Unauthorized)
