@@ -174,7 +174,7 @@ public class ScholarService {
             }
         }
 
-        if (newFound && !faculty.isHasUpdate()) {
+        if (newFound && (faculty.getHasUpdate() == null || !faculty.getHasUpdate())) {
             faculty.setHasUpdate(true);
             facultyProfileRepository.save(faculty);
         }
