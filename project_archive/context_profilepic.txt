@@ -1,0 +1,96 @@
+ty-card">
+
+
+
+                            
+
+
+                            <div class="img-11" >
+
+
+
+                            <img class="faculty-img" loading="lazy" src=../Facultyprofiles/uploads/514/profilepic514.jpeg alt=""><button  id="514" onclick = "openmodal(this.id)"class="cta_button_secondary Secondary-btn_txt view-profile-btn">View Profile <img src="assets/icons/arrow_forward_small.png"></button></div>
+
+
+
+                            <p class="aboutus-div-56">dr . a.ranganadha reddy</p>
+
+
+
+                            <div class="faculty-details">
+
+
+
+                                <p class="faculty-branch">PROFESSOR (BI)</p>
+
+
+
+                                <p class="faculty-interest">Bioinformatics, Microbial Biotechnology, Biopolymer Production<br> </p>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    
+
+
+                        <div class="faculty-card">
+
+
+
+                            
+
+
+                            <div class="img-11" >
+
+
+
+                            <img class="faculty-img" loading="lazy" src=../Facultyprofiles/uploads/02007/profilepic02007.jpeg alt=""><button  id="02007" onclick = "openmodal(this.id)"class="cta_button_secondary Secondary-btn_txt view-profile-btn">View Profile <img src="assets/icons/arrow_forward_small.png"></button></div>
+
+
+
+                            <p class="aboutus-div-56">mr . aditya gutta</p>
+
+
+
+                            <div class="faculty-details">
+
+
+
+                                <p class="faculty-branch">PROFESSOR (AGE)</p>
+
+
+
+                                <p class="faculty-interest">Processing and food engineering<br> </p>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    
+
+
+                        <div class="faculty-card">
+
+
+
+                            
+
+
+                            <div class="img-11" >
+
+
+
+                            <img class="faculty-img" loading="lazy" src=../Facultyprofiles/uploads/01878/profilepic01878.jpg alt=""><button  id="01878" onclick = "openmodal(this.id)"class="cta_button_secondary Secondary-btn_txt view-profile-btn">View Profile <img src="assets/icons/arrow_forward_small.p

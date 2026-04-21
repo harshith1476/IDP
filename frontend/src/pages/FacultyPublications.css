@@ -1,0 +1,322 @@
+/* Publication Form Styles - Official Academic Portal Design */
+
+.publication-form-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 100px 20px 40px 20px;
+  overflow-y: auto;
+}
+
+.publication-form-container {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.publication-form-header {
+  padding: 18px 28px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.publication-form-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.publication-form-body {
+  padding: 24px 28px;
+  max-height: calc(100vh - 240px);
+  overflow-y: auto;
+}
+
+.publication-form-section {
+  margin-bottom: 24px;
+}
+
+.publication-form-section:last-of-type {
+  margin-bottom: 0;
+}
+
+.publication-form-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e5e7eb;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.publication-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.publication-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.publication-form-field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.publication-form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.publication-form-label-required {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.publication-form-input,
+.publication-form-select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #1f2937;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-family: inherit;
+  height: 38px;
+}
+
+.publication-form-input:focus,
+.publication-form-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.publication-form-input::placeholder {
+  color: #9ca3af;
+}
+
+.publication-form-uploads {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.publication-form-uploads-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+}
+
+.publication-form-uploads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.publication-form-remarks {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 8px;
+}
+
+.publication-form-remarks-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #991b1b;
+  margin: 0 0 8px 0;
+}
+
+.publication-form-remarks-text {
+  font-size: 14px;
+  color: #b91c1c;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.publication-form-actions {
+  padding: 18px 28px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background: #fafafa;
+  border-radius: 0 0 8px 8px;
+}
+
+.publication-form-btn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  min-width: 100px;
+}
+
+.publication-form-btn-primary {
+  background: #1e3a8a;
+  color: #ffffff;
+}
+
+.publication-form-btn-primary:hover:not(:disabled) {
+  background: #1e40af;
+  box-shadow: 0 2px 4px rgba(30, 58, 138, 0.2);
+}
+
+.publication-form-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.publication-form-btn-secondary {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.publication-form-btn-secondary:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .publication-form-modal {
+    padding: 20px 16px;
+    align-items: flex-start;
+  }
+
+  .publication-form-container {
+    max-width: 100%;
+  }
+
+  .publication-form-header {
+    padding: 20px 24px;
+  }
+
+  .publication-form-title {
+    font-size: 18px;
+  }
+
+  .publication-form-body {
+    padding: 24px;
+  }
+
+  .publication-form-section {
+    margin-bottom: 24px;
+  }
+
+  .publication-form-field-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .publication-form-actions {
+    padding: 20px 24px;
+    flex-direction: column-reverse;
+  }
+
+  .publication-form-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .publication-form-modal {
+    padding: 120px 12px 16px 12px;
+    align-items: center;
+  }
+
+  .publication-form-header {
+    padding: 16px 20px;
+  }
+
+  .publication-form-body {
+    padding: 20px;
+  }
+
+  .publication-form-title {
+    font-size: 16px;
+  }
+
+  .publication-form-section-title {
+    font-size: 15px;
+  }
+
+  .publication-form-actions {
+    padding: 16px 20px;
+  }
+}
+.researcher-card {
+  padding: 16px;
+  border: 2px solid #f3e8ff;
+  border-radius: 8px;
+  background: #faf5ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.researcher-card:hover {
+  border-color: #e9d5ff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.researcher-info h4 {
+  margin: 0 0 4px 0;
+  color: #1f2937;
+  font-size: 15px;
+}
+
+.researcher-id {
+  font-size: 12px;
+  color: #7e22ce;
+  font-family: monospace;
+  margin: 0;
+}
+
+.view-works-btn {
+  padding: 8px 16px;
+  background: #7e22ce;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.view-works-btn:hover {
+  background: #6b21a8;
+}

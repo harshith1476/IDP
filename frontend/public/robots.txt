@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /faculty/status
+Disallow: /student/status
+
+Sitemap: https://drims.vignan.ac.in/sitemap.xml

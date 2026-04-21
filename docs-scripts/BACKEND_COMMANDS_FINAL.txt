@@ -1,0 +1,56 @@
+========================================
+FINAL COMMANDS TO RUN - Load All 74 Faculty
+========================================
+
+STEP 1: CLEAR DATABASE (REQUIRED!)
+----------------------------------------
+Use MongoDB Compass (Easiest):
+  1. Open MongoDB Compass
+  2. Connect to: mongodb://localhost:27017
+  3. Select 'drims' database
+  4. Click "Drop Database"
+  5. Confirm deletion
+
+OR use MongoDB Shell:
+  mongosh
+  use drims
+  db.dropDatabase()
+  exit
+
+STEP 2: REBUILD BACKEND
+----------------------------------------
+cd C:\Users\vemul\Desktop\DRIMS-master\backend
+mvn clean install -DskipTests
+
+STEP 3: START BACKEND (Loads All 74 Faculty)
+----------------------------------------
+mvn spring-boot:run
+
+========================================
+WHAT TO EXPECT:
+========================================
+- Backend will start loading faculty
+- You'll see: "Created: [Name] ([email] / faculty123) [Employee ID: EMP###]"
+- Final message: "Total faculty created: 74 (Expected: 74)"
+- Backend ready at: http://localhost:8080
+
+========================================
+ALL 74 FACULTY LOGIN:
+========================================
+Email: [auto-generated]@drims.edu
+Password: faculty123
+
+Examples:
+- y.ram.mohan@drims.edu / faculty123
+- b.anil.babu@drims.edu / faculty123
+- s.anitha@drims.edu / faculty123
+
+========================================
+VERIFY SUCCESS:
+========================================
+1. Console shows: "Total faculty created: 74"
+2. Backend running on port 8080
+3. All faculty can login with faculty123
+4. Admin can see all 74 faculty
+
+========================================

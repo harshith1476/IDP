@@ -1,0 +1,426 @@
+/**
+ * Global Mobile Responsive Styles for DRIMS
+ * Mobile-first approach with desktop enhancements
+ */
+
+/* ============================================
+   GLOBAL MOBILE UTILITIES
+   ============================================ */
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px; /* iOS recommended touch target */
+    min-width: 44px;
+  }
+
+  /* Larger font sizes for readability */
+  body {
+    font-size: 16px; /* Prevents iOS zoom on input focus */
+  }
+
+  /* Prevent horizontal scroll */
+  * {
+    max-width: 100%;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
+/* ============================================
+   FORM MOBILE RESPONSIVENESS
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Single column forms on mobile */
+  .form-grid,
+  .grid-cols-2,
+  .grid-cols-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  /* Touch-friendly inputs */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important; /* Prevents iOS zoom */
+    border-radius: 8px !important;
+    border: 2px solid #e2e8f0 !important;
+    transition: border-color 0.2s !important;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: #1e3a8a !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1) !important;
+  }
+
+  /* Labels above inputs on mobile */
+  label {
+    display: block !important;
+    margin-bottom: 8px !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    color: #374151 !important;
+  }
+
+  /* Buttons - Smart sizing on mobile */
+  button[type="submit"] {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    min-height: 44px !important;
+  }
+
+  /* Action buttons - not full width */
+  button[type="button"]:not(.full-width-mobile) {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    min-height: 40px !important;
+    width: auto !important;
+  }
+
+  /* Primary action buttons */
+  .btn-primary,
+  .bg-blue-600,
+  .bg-green-600,
+  .bg-red-600 {
+    padding: 10px 18px !important;
+    font-size: 14px !important;
+    min-height: 42px !important;
+  }
+
+  /* Small action buttons in tables/cards */
+  .data-card-actions button,
+  table button,
+  .flex.gap-2 button {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+    min-height: 36px !important;
+    width: auto !important;
+  }
+
+  /* File upload areas */
+  .file-upload-area {
+    padding: 24px 16px !important;
+    min-height: 120px !important;
+  }
+}
+
+/* ============================================
+   TABLE TO CARD CONVERSION (MOBILE)
+   ============================================ */
+
+/* Hide tables on mobile, show cards */
+@media (max-width: 768px) {
+  table {
+    display: none !important;
+  }
+
+  .table-container {
+    display: none !important;
+  }
+
+  /* Card view for mobile */
+  .mobile-card-view {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .data-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .data-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #f1f5f9;
+  }
+
+  .data-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    flex: 1;
+    margin-right: 12px;
+  }
+
+  .data-card-status {
+    flex-shrink: 0;
+  }
+
+  .data-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .data-card-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .data-card-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .data-card-value {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .data-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .data-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    flex-wrap: wrap;
+  }
+
+  .data-card-actions button {
+    flex: 1;
+    min-width: 80px;
+    padding: 8px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    font-weight: 600;
+    min-height: 38px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .data-card-actions button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Show tables on desktop, hide cards */
+@media (min-width: 769px) {
+  .mobile-card-view {
+    display: none !important;
+  }
+
+  table {
+    display: table !important;
+  }
+
+  .table-container {
+    display: block !important;
+  }
+}
+
+/* ============================================
+   MODAL MOBILE RESPONSIVENESS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .modal,
+  .modal-overlay {
+    padding: 0 !important;
+  }
+
+  .modal-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-header {
+    position: sticky;
+    top: 0;
+    background: #ffffff;
+    z-index: 10;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
+/* ============================================
+   DASHBOARD CARDS MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .stats-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .stat-card {
+    padding: 20px !important;
+  }
+
+  .stat-value {
+    font-size: 28px !important;
+  }
+}
+
+/* ============================================
+   NAVIGATION MOBILE
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Bottom navigation for students */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .bottom-nav-item.active {
+    color: #1e3a8a;
+  }
+
+  .bottom-nav-item i {
+    font-size: 20px;
+  }
+
+  /* Add padding to main content when bottom nav exists */
+  .main-container.has-bottom-nav {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+/* Show only on mobile */
+@media (min-width: 769px) {
+  .show-mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .show-mobile-only {
+    display: block !important;
+  }
+}
+
+/* Touch-friendly spacing */
+@media (max-width: 768px) {
+  .touch-spacing {
+    padding: 16px !important;
+    margin: 16px 0 !important;
+  }
+}
+
+/* ============================================
+   NETWORK AWARENESS
+   ============================================ */
+
+/* Reduce animations on slow network */
+.slow-network * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Ensure sufficient contrast */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Focus states for keyboard navigation */
+  *:focus-visible {
+    outline: 3px solid #1e3a8a;
+    outline-offset: 2px;
+  }
+}

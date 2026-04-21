@@ -1,0 +1,55 @@
+========================================
+QUICK COMMANDS TO LOAD ALL 74 FACULTY
+========================================
+
+STEP 1: Clear MongoDB Database
+----------------------------------------
+mongo
+use drims
+db.dropDatabase()
+exit
+
+STEP 2: Navigate to Backend
+----------------------------------------
+cd backend
+
+STEP 3: Rebuild Backend
+----------------------------------------
+.\mvnw.cmd clean install
+
+STEP 4: Start Backend (Loads All 74 Faculty)
+----------------------------------------
+.\mvnw.cmd spring-boot:run
+
+========================================
+WHAT TO EXPECT:
+========================================
+- Backend will start loading faculty
+- You'll see: "Created: [Name] ([email] / faculty123)"
+- Final message: "Total faculty created: 74 (Expected: 74)"
+- Backend will be ready at: http://localhost:8080
+
+========================================
+VERIFY FACULTY ARE LOADED:
+========================================
+Option 1: Check console for "Total faculty created: 74"
+
+Option 2: Check MongoDB:
+  mongo
+  use drims
+  db.users.count({role: "FACULTY"})
+  (Should return: 74)
+
+Option 3: Login as admin and check Faculty section
+
+========================================
+ALL FACULTY LOGIN:
+================================--------
+Email: [auto-generated]@drims.edu
+Password: faculty123
+
+Example:
+- Mr. Y. Ram Mohan → y.ram.mohan@drims.edu / faculty123
+- Mr. B. Anil Babu → b.anil.babu@drims.edu / faculty123
+
+========================================
